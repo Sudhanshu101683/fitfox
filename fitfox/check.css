@@ -1,0 +1,415 @@
+/* About Section */
+.about {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient background waves */
+.about::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #ff9800, #ff4081, #00e5ff, #ff9800);
+  animation: rotateBg 12s linear infinite;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+@keyframes rotateBg {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.about-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 1;
+}
+
+/* Product image */
+.about-image img {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(255,152,0,0.5);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Text */
+.about-text {
+  max-width: 600px;
+  animation: fadeSlide 1.2s ease-in-out;
+}
+
+.about-text h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-text h2 span {
+  color: #ff9800;
+}
+
+/* Gradient animated text */
+.gradient-text {
+  background: linear-gradient(90deg, #ff9800, #ff4081, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300%;
+  animation: gradientMove 5s infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+/* Paragraph */
+.about-text p {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+/* Glassmorphism cards */
+.glass-cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.glass-card {
+  padding: 15px 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255,152,0,0.4);
+}
+
+/* CTA button */
+.about-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #ff9800, #ff4081);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff9800, 0 0 40px #ff4081;
+}
+
+/* Animations */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* About Section */
+.about {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient background waves */
+.about::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #ff9800, #ff4081, #00e5ff, #ff9800);
+  animation: rotateBg 12s linear infinite;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+@keyframes rotateBg {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.about-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 1;
+}
+
+/* Product image */
+.about-image img {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(255,152,0,0.5);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Text */
+.about-text {
+  max-width: 600px;
+  animation: fadeSlide 1.2s ease-in-out;
+}
+
+.about-text h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-text h2 span {
+  color: #ff9800;
+}
+
+/* Gradient animated text */
+.gradient-text {
+  background: linear-gradient(90deg, #ff9800, #ff4081, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300%;
+  animation: gradientMove 5s infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+/* Paragraph */
+.about-text p {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+/* Glassmorphism cards */
+.glass-cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.glass-card {
+  padding: 15px 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255,152,0,0.4);
+}
+
+/* CTA button */
+.about-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #ff9800, #ff4081);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff9800, 0 0 40px #ff4081;
+}
+
+/* Animations */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+
+
+/* About Section */
+.about {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient background waves */
+.about::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #ff9800, #ff4081, #00e5ff, #ff9800);
+  animation: rotateBg 12s linear infinite;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+@keyframes rotateBg {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.about-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 1;
+}
+
+/* Product image */
+.about-image img {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(255,152,0,0.5);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Text */
+.about-text {
+  max-width: 600px;
+  animation: fadeSlide 1.2s ease-in-out;
+}
+
+.about-text h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-text h2 span {
+  color: #ff9800;
+}
+
+/* Gradient animated text */
+.gradient-text {
+  background: linear-gradient(90deg, #ff9800, #ff4081, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300%;
+  animation: gradientMove 5s infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+/* Paragraph */
+.about-text p {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+/* Glassmorphism cards */
+.glass-cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.glass-card {
+  padding: 15px 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255,152,0,0.4);
+}
+
+/* CTA button */
+.about-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #ff9800, #ff4081);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff9800, 0 0 40px #ff4081;
+}
+
+/* Animations */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}

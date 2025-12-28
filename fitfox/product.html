@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitFox Product</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .buy-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #d35400, 0 6px 12px rgba(0,0,0,0.25);
+  transition: all 0.2s ease-in-out;
+}
+
+.buy-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 0 #d35400, 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.buy-btn:active {
+  transform: translateY(3px) scale(0.97);
+  box-shadow: 0 2px 0 #d35400, 0 2px 6px rgba(0,0,0,0.2);
+}
+
+    .navbar .logo img {
+      width: 70px;
+      cursor: pointer;
+      animation: spinPause 3s linear infinite;
+      transition: transform 0.5s ease, filter 0.5s ease;
+    }
+    .navbar .logo img:hover {
+      transform: scale(1.2) rotate(15deg);
+      filter: drop-shadow(0 0 10px #ff5722) drop-shadow(0 0 20px #ff9800);
+    }
+    @keyframes spinPause {
+      0% { transform: rotate(0deg); }
+      70% { transform: rotate(360deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+    }
+    .navbar ul li {
+      margin: 0 15px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .navbar ul li a:hover {
+      color: #ff5722;
+    }
+    
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 50px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    
+    /* Left: Product Image */
+    .product-card {
+      perspective: 1000px;
+    }
+    .product-img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      transform-style: preserve-3d;
+    }
+    .product-img:hover {
+      transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+      box-shadow: 0 20px 50px rgba(255,87,34,0.5);
+    }
+    /* Product Details */
+.product-details {
+  max-width: 500px;
+}
+
+/* Heading */
+.product-details h1 {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff5722, #ff9800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.product-details p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #444;   /* softer dark grey for readability */
+}
+
+
+   /* Product Qualities */
+.qualities {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.qualities li {
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for qualities */
+.qualities li:hover {
+  transform: translateY(-5px) rotateX(10deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* 3D Buy Button */
+.buy-btn-3d {
+  margin-top: 25px;
+  padding: 14px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(145deg, #ff5722, #ff9800);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 6px 0 #d35400, 0 8px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover 3D press effect */
+.buy-btn-3d:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 0 #c0392b, 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Click effect (pressed down) */
+.buy-btn-3d:active {
+  transform: translateY(4px) scale(0.95);
+  box-shadow: 0 3px 0 #a93226, 0 5px 10px rgba(0,0,0,0.2);
+}
+
+    /* Buttons */
+    .btn-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #ff5722, #ff9800);
+      color: #fff;
+      font-weight: bold;
+    }
+    .btn:hover {
+      transform: scale(1.1) rotate(-3deg);
+      box-shadow: 0 8px 20px rgba(255,87,34,0.5);
+    }
+    .quantity {
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+    /* Footer */
+.footer {
+  background: #f87d02;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="Adobe Express - file.png" alt="Logo">
+    </div>
+    <ul>
+       <button class="buy-btn" onclick="window.location.href='fitfox.html'">home</button>
+     
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Left: Product Image -->
+    <div class="product-card">
+      <img src="ChatGPT Image Aug 26, 2025, 04_21_42 PM.png" class="product-img" alt="Product">
+    </div>
+
+    <!-- Right: Product Details -->
+    <div class="product-details">
+      <h1>FitFox Makhana</h1>
+      <p>Healthy • Crunchy • Delicious <br> A perfect snack for fitness lovers.</p>
+      <div class="price">₹250 / 100g</div>
+     <!-- Product Qualities -->
+<ul class="qualities">
+  <li>🔥 Low Calories</li>
+  <li>💪 High Protein</li>
+  <li>🌱 100% Natural</li>
+  <li>💚 Good for Heart</li>
+</ul>
+
+
+
+      <div class="btn-container">
+        <button class="btn" onclick="decrease()">-</button>
+        <span class="quantity" id="qty">1</span>
+        <button class="btn" onclick="increase()">+</button>
+      </div>
+    </div>
+    <!-- Buy Button -->
+
+<button class="buy-btn-3d" onclick="window.location.href='buy now page.html'">🛒 Buy Now</button>
+
+  </section>
+
+  <script>
+    let qty = 1;
+    function increase() {
+      qty++;
+      document.getElementById("qty").innerText = qty;
+    }
+    function decrease() {
+      if (qty > 1) {
+        qty--;
+        document.getElementById("qty").innerText = qty;
+      }
+    }
+  </script>
+    <!-- Contact Section -->
+  <footer id="contact" class="footer">
+    <h2>Contact Us</h2>
+    <p>Email: support@fitfox.com | Phone: +91 8009393341</p>
+    <p>© 2025 FitFox. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

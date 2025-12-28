@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="check.css">
+  <title>FitFox - Makhana</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    /* Navbar */
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+  .navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 80px;
+  margin-right: 10px;
+  cursor: pointer;
+
+  /* Bounce in + spin with pause */
+  animation: logo-bounce 1s ease-out, spinPauseGlow 5s linear infinite;
+  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+/* Bounce on load */
+@keyframes logo-bounce {
+  0% { transform: scale(0.6); opacity: 0; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Spin + glow + pause */
+@keyframes spinPauseGlow {
+  0%   { transform: rotate(0deg); filter: drop-shadow(0 0 5px #ff9800); }
+  60%  { transform: rotate(360deg); filter: drop-shadow(0 0 15px #ff5722); } /* 3s spin */
+  80%  { transform: rotate(360deg) scale(1.05); filter: drop-shadow(0 0 20px #ffeb3b); } /* glowing pause */
+  100% { transform: rotate(360deg); filter: drop-shadow(0 0 5px #ff9800); } /* reset */
+}
+
+/* Hover effect: rainbow glow + scale */
+.navbar .logo img:hover {
+  transform: scale(1.2) rotate(15deg);
+  filter: drop-shadow(0 0 10px red)
+          drop-shadow(0 0 20px orange)
+          drop-shadow(0 0 30px yellow)
+          drop-shadow(0 0 40px lime)
+          drop-shadow(0 0 50px cyan)
+          drop-shadow(0 0 60px blue)
+          drop-shadow(0 0 70px violet);
+}
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #f5f3f3;
+      font-weight: bold;
+    }
+    .cart-btn {
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+.buy-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #d35400, 0 6px 12px rgba(0,0,0,0.25);
+  transition: all 0.2s ease-in-out;
+}
+
+.buy-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 0 #d35400, 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.buy-btn:active {
+  transform: translateY(3px) scale(0.97);
+  box-shadow: 0 2px 0 #d35400, 0 2px 6px rgba(0,0,0,0.2);
+}
+
+    /* Hero Section */
+      .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      background: linear-gradient(135deg, #ff914d, );
+      flex-wrap: wrap;
+    }
+ .hero-image {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.hero-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* smooth fade */
+}
+
+.hero-image img.active {
+  opacity: 1;
+}
+
+    .hero-content {
+      max-width: 400px;
+      margin-left: 40px;
+    }
+    .hero-content h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .hero-content p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #000;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .buy-btn:hover {
+      background: #ff5722;
+    }
+
+    
+
+    /* Products Section */
+    .products {
+      padding: 50px;
+      text-align: center;
+    }
+    .products h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      width: 220px;
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .product-card p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+
+ /* Reviews */
+    .review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.review-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(20, 20, 20, 0.1);
+  font-style: italic;
+  font-size: 28px;
+}
+
+/* About Section */
+.about {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Card Styling */
+.card {
+  padding: 25px;
+  background: linear-gradient(135deg, #fff, #fdf2e9);
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Neon Gradient Border */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(135deg, #ff9800, #ff5722, #ff4081);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+  z-index: 1;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #fff7f2, #ffe0cc);
+}
+
+/* Text Glow Effect */
+.card:hover {
+  color: #ff5722;
+  text-shadow: 0 0 10px rgba(255, 87, 34, 0.7),
+               0 0 20px rgba(255, 87, 34, 0.5);
+}
+
+/* Floating Animation */
+@keyframes floatCard {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.card:nth-child(1) { animation: floatCard 4s ease-in-out infinite; }
+.card:nth-child(2) { animation: floatCard 4.5s ease-in-out infinite; }
+.card:nth-child(3) { animation: floatCard 5s ease-in-out infinite; }
+.card:nth-child(4) { animation: floatCard 5.5s ease-in-out infinite; }
+
+
+
+/* Footer */
+.footer {
+  background: #f87d02;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="Adobe Express - file.png" alt="FitFox Logo">
+      <strong>FITFOX</strong>
+    </div>
+     <!-- Menu Icon -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  
+    
+   
+ <!-- Menu Items -->
+    <ul class="menu" id="menu">
+      <li><a href="#products" class="buy-btn">Products</a></li>
+      <li><a href="#reviews" class="buy-btn">Reviews</a></li>
+      <li><a href="#contact" class="buy-btn">Contact</a></li>
+      <li><button class="buy-btn" onclick="window.location.href='buy now page.html'">Add to Cart</button></li>
+    </ul>
+  </nav>
+
+     
+    
+    <button class="buy-btn" onclick="window.location.href='test.html'">Login</button>
+
+    </ul>
+
+  </div>
+
+
+  <!-- About Section (Gen Z Style) -->
+<section class="about" id="about">
+  <div class="about-container">
+    <!-- Left: Image -->
+    <div class="about-image">
+      <img src="ChatGPT Image Aug 24, 2025, 11_33_17 PM.png" alt="FitFox Product">
+    </div>
+
+    <!-- Right: Text -->
+    <div class="about-text">
+      <h2 class="gradient-text">Why Choose <span>FitFox?</span></h2>
+      <p>
+        Gen Z loves snacks that are <strong>healthy</strong>, 
+        <strong>aesthetic</strong>, and <strong>eco-friendly</strong>.  
+        That’s why FitFox is roasted to perfection, protein-packed, 
+        and comes in a vibe-friendly design you’ll love showing off! 🚀
+      </p>
+
+      <div class 1="glass-cards">
+        <div class 1="glass-card">✨ 100% Natural</div>
+        <div class 1="glass-card">⚡ High Energy</div>
+        <div class 1="glass-card">🌍 Eco Packaging</div>
+      </div>
+
+      <a href="product.html" class="about-btn">Shop Now 🚀</a>
+    </div>
+  </div>
+  
+</section>
+
+
+<script>
+  function buyNow(name, price) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let existing = cart.find(item => item.name === name);
+
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    // Redirect to cart page
+    window.location.href = "cart.html";
+  }
+</script>
+
+
+<script>
+  function buyNow(name, price) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let existing = cart.find(item => item.name === name);
+
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    // Redirect to cart page
+    window.location.href = "cart.html";
+  }
+</script>
+
+  </div>
+</div>
+
+
+  <!-- Products Section -->
+<section id="products" class="products">
+  <h2>Makhana</h2>
+  <div class="product-grid">
+    
+    <div class="product-card" onclick="redirectToProduct()">
+      <img src="ChatGPT Image Aug 24, 2025, 11_33_26 PM.png" alt="Fox Nut">
+      <p>Fox Nut</p>
+    </div>
+
+    <div class="product-card" onclick="redirectToProduct()">
+      <img src="ChatGPT Image Aug 24, 2025, 11_33_32 PM.png" alt="Product 2">
+      <p>From India to the World</p>
+    </div>
+
+    <div class="product-card" onclick="redirectToProduct()">
+      <img src="ChatGPT Image Aug 25, 2025, 10_28_10 PM.png" alt="Product 3">
+      <p>From India to the World</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Script -->
+<script>
+  function redirectToProduct() {
+    window.location.href = "product.html";
+  }
+</script>
+
+   <!-- Reviews Section -->
+  <section id="reviews" class="reviews">
+    <h2>What Our Customers Say</h2>
+    <div class="review-grid">
+      <div class="review-card">“Super tasty and healthy! Perfect snack after gym.” – Bulbul Kumari</div>
+      <div class="review-card">“Loved the crunch. Way better than fried chips.” – Arjun</div>
+      <div class="review-card">“Great for fasting during Navratri. Highly recommended.” – Meera</div>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>Why Choose FitFox?</h2>
+    <p>FitFox Makhana is a guilt-free, protein-rich, and fiber-packed superfood. Perfect for fitness lovers, office goers, and festive fasting. Light, crunchy, and 100% natural.</p>
+    <div class="about-grid">
+      <div class="card">🔥 Low Calories</div>
+      <div class="card">💪 High Protein</div>
+      <div class="card">🌱 100% Natural</div>
+      <div class="card">💚 Good for Heart</div>
+    </div>
+  </section>
+ 
+
+  <!-- Contact Section -->
+  <footer id="contact" class="footer">
+    <h2>Contact Us</h2>
+    <p>Email: support@fitfox.com | Phone: +91 8009393341</p>
+    <p>© 2025 FitFox. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function buyNow() {
+      alert("Thank you for choosing FitFox! Your order is being processed.");
+    }
+   
+
+
+  </script>
+  <script>
+  let currentIndex = 0;
+  const images = document.querySelectorAll(".hero-image img");
+
+  function showNextImage() {
+    images[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add("active");
+  }
+
+  // Initialize
+  images[0].classList.add("active");
+  setInterval(showNextImage, 10000); // change every 10s
+</script>
+
+ <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitFox Makhana</title>
+  <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="Adobe Express - file.png" alt="FitFox Logo">
+      <strong>FITFOX</strong>
+    </div>
+    <ul>
+     
+      <button class="buy-btn" onclick="window.location.href='fitfox.html'">home</button>
+    
+    <button class="buy-btn" onclick="window.location.href='#auth'">Login</button>
+
+    </ul>
+    <button class="buy-btn" onclick="buyNow()">Add To Cart</button>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-image">
+      <img src="ChatGPT Image Aug 25, 2025, 10_28_10 PM.png" class="slide active">
+      <img src="ChatGPT Image Aug 24, 2025, 11_33_13 PM.png" class="slide">
+    </div>
+    <div class="hero-content">
+      <h1>FitFox Makhana</h1>
+      <p>100g Pack Only ₹250</p>
+      <p><em>Boosts immunity and keeps you energetic.</em></p>
+      <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+    </div>
+  </div>
+
+ <!-- Login / Signup -->
+<div id="auth" class="auth">
+  <h2>Login / Signup</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+
+  <div class="auth-buttons">
+    <button class="btn signup-btn">Sign Up</button>
+    <button class="btn login-btn">Login</button>
+  </div>
+
+  <p id="auth-msg"></p>
+</div>
+
+<!-- About Section -->
+<section class="about" id="about">
+  <h2 class="about-title">About <span>FitFox</span></h2>
+  <p class="about-subtitle">Healthy • Crunchy • Delicious</p>
+
+  <div class="about-grid">
+    <div class="card">
+      <div class="icon">🥗</div>
+      <h3>Healthy Ingredients</h3>
+      <p>Made with premium quality makhana, roasted to perfection without artificial flavors.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Energy Booster</h3>
+      <p>Packed with proteins and nutrients to keep you active all day long.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌿</div>
+      <h3>Eco-Friendly</h3>
+      <p>We care for the planet. Our packaging is sustainable and eco-conscious.</p>
+    </div>
+  </div>
+</section>
+
+   <!-- Contact Section -->
+  <footer id="contact" class="footer">
+    <h2>Contact Us</h2>
+    <p>Email: support@fitfox.com | Phone: +91 8009393341</p>
+    <p>© 2025 FitFox. All Rights Reserved.</p>
+  </footer>
+
+
+
+<script>
+  function scrollToAuth() {
+    document.getElementById("auth").scrollIntoView({ 
+      behavior: "smooth" 
+    });
+  }
+</script>
+
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="test.js"></script>
+</body>
+</html>
